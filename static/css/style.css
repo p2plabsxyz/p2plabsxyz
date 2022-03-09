@@ -1,0 +1,11 @@
+html,
+body {
+  background-color: #fafbf8;
+  scroll-behavior: smooth;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.project{
+    background-color: #fbfafa;
+}
