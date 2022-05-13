@@ -6,6 +6,9 @@ body {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+.logo{
+  border-radius: 3px;
+}
 .project{
     background-color: #fbfafa;
 }
