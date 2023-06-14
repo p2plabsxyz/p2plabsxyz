@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import firebase from "firebase/compat/app";
 import db from "../firebase";
 import Hero from "../images/hero.png";
+import Peersky from "../images/peersky-browser.png";
 import DScan from "../images/dscan.png";
 import Dhost from "../images/dhost.png";
 import NFT from "../images/1clicknft.png";
@@ -118,12 +119,68 @@ function LandingPage() {
               <div className="h-full bg-white border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <img
                   className="lg:h-48 md:h-36 w-full object-cover object-center"
+                  src={Peersky}
+                  alt="Peersky Browser"
+                />
+                <div className="p-6">
+                  <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                    Infrastructure
+                  </h2>
+                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
+                    Peersky Browser
+                  </h1>
+                  <p className="leading-relaxed mb-3">
+                    A minimal p2p web browser.
+                  </p>
+                  <br />
+                  <br />
+                  <div className="flex items-center flex-wrap">
+                    <a
+                      className="text-sky-500 hover:text-sky-600 inline-flex items-center md:mb-2 lg:mb-0"
+                      href="https://peersky.p2plabs.xyz"
+                    >
+                      Download for desktop
+                      <svg
+                        className="w-4 h-4 ml-2"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                      </svg>
+                    </a>
+                    <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                      <a
+                        href="https://github.com/p2plabsxyz/peersky-browser"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src="https://img.shields.io/badge/github-repo-skyblue?style=flat-square"
+                          width="80"
+                          alt="github"
+                        />
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* dscan */}
+            <div className="p-4 md:w-1/3">
+              <div className="h-full bg-white border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img
+                  className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src={DScan}
                   alt="DScan"
                 />
                 <div className="p-6">
                   <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-                    Decentralized storage & sharing tool
+                    File sharing
                   </h2>
                   <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                     DScan
