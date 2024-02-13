@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import firebase from "firebase/compat/app";
-import db from "../firebase";
+import React from "react";
+// import firebase from "firebase/compat/app";
+// import db from "../firebase";
 import Hero from "../images/hero.png";
 import Peersky from "../images/peersky-browser.png";
 import DScan from "../images/dscan.png";
@@ -8,26 +8,27 @@ import Dhost from "../images/dhost.png";
 import NFT from "../images/1clicknft.png";
 
 function LandingPage() {
-  const [input, setInput] = useState("");
-  const [subscribe, setSubscribe] = useState("");
+  // Newsletter
+  // const [input, setInput] = useState("");
+  // const [subscribe, setSubscribe] = useState("");
 
-  function inputHandler(e) {
-    setInput(e.target.value);
-  }
+  // function inputHandler(e) {
+  //   setInput(e.target.value);
+  // }
 
-  async function submitHandler(e) {
-    e.preventDefault();
-    if (input) {
-      await db.collection("emails").add({
-        email: input,
-        time: firebase.firestore.FieldValue.serverTimestamp(),
-      });
-      setSubscribe("Subscribed successfully!");
-      setTimeout(() => {
-        setSubscribe("");
-      }, 3690);
-    }
-  }
+  // async function submitHandler(e) {
+  //   e.preventDefault();
+  //   if (input) {
+  //     await db.collection("emails").add({
+  //       email: input,
+  //       time: firebase.firestore.FieldValue.serverTimestamp(),
+  //     });
+  //     setSubscribe("Subscribed successfully!");
+  //     setTimeout(() => {
+  //       setSubscribe("");
+  //     }, 3690);
+  //   }
+  // }
 
   return (
     <div style={{ backgroundColor: "#FFFCF9" }}>
@@ -40,8 +41,8 @@ function LandingPage() {
               <code>Powering the Decentralized Web</code>
             </h1>
             <p className="mb-8 leading-relaxed">
-              At P2P Labs, we're building curated web3 infrastructure tools for
-              the decentralized internet on top of the IPFS protocol.
+              At P2P Labs, we're building curated infrastructure tools for the
+              decentralized web, based on p2p protocols.
               <br />
               One of the most significant benefits of decentralization is the
               transformation towards seamless data accessibility from anywhere,
@@ -53,16 +54,24 @@ function LandingPage() {
               </b>
             </p>
             <div className="block justify-center">
-              <form onSubmit={submitHandler}>
-                <div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
-                  <div className="relative w-48 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
-                    <label
-                      for="footer-field"
-                      className="leading-7 text-sm text-gray-600"
+              {/* <form onSubmit={submitHandler}> */}
+              <div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
+                <div className="relative w-48 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
+                  <label
+                    for="footer-field"
+                    className="leading-7 text-md text-gray-600"
+                  >
+                    Join our Matrix community{" "}
+                    <a
+                      href="https://matrix.to/#/#p2plabs.xyz:matrix.org"
+                      className="text-gray-600 hover:text-green-500 underline hover:no-underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      🗞️ Newsletter
-                    </label>
-                    <input
+                      @p2plabs.xyz:matrix.org
+                    </a>
+                  </label>
+                  {/* <input
                       type="email"
                       onChange={inputHandler}
                       value={input}
@@ -71,19 +80,19 @@ function LandingPage() {
                       name="footer-field"
                       className="w-full bg-white bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-cyan-200 focus:border-cyan-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                       required
-                    />
-                  </div>
-                  <button
+                    /> */}
+                </div>
+                {/* <button
                     type="submit"
                     className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-cyan-400 border-0 py-2 px-4 focus:outline-none hover:bg-cyan-500 rounded"
                   >
                     Subscribe
-                  </button>
-                </div>
-              </form>
-              <p className="text-sky-400 text-sm mt-2 md:text-left text-center">
+                  </button> */}
+              </div>
+              {/* </form> */}
+              {/* <p className="text-sky-400 text-sm mt-2 md:text-left text-center">
                 {subscribe}
-              </p>
+              </p> */}
             </div>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
@@ -153,19 +162,6 @@ function LandingPage() {
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
                     </a>
-                    <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                      <a
-                        href="https://github.com/p2plabsxyz/peersky-browser"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img
-                          src="https://img.shields.io/badge/github-repo-skyblue?style=flat-square"
-                          width="80"
-                          alt="github"
-                        />
-                      </a>
-                    </span>
                   </div>
                 </div>
               </div>
@@ -180,14 +176,14 @@ function LandingPage() {
                 />
                 <div className="p-6">
                   <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-                    File sharing
+                    Tool
                   </h2>
                   <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                     DScan
                   </h1>
                   <p className="leading-relaxed mb-3">
-                    DScan is a chrome extension that uploads the content to IPFS
-                    and generates decentralized QR codes.
+                    A decentralized storage and file-sharing tool that uploads
+                    content to IPFS and generates decentralized QR codes.
                   </p>
                   <div className="flex items-center flex-wrap">
                     <a
@@ -210,19 +206,6 @@ function LandingPage() {
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
                     </a>
-                    <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                      <a
-                        href="https://chrome.google.com/webstore/detail/dscan-decentralized-qr-co/idpfgkgogjjgklefnkjdpghkifbjenap"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img
-                          src="https://img.shields.io/chrome-web-store/users/idpfgkgogjjgklefnkjdpghkifbjenap?label=installs&style=flat-square&color=blue"
-                          width="80"
-                          alt="chrome web store"
-                        />
-                      </a>
-                    </span>
                   </div>
                 </div>
               </div>
@@ -268,19 +251,6 @@ function LandingPage() {
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
                     </a>
-                    <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                      <a
-                        href="https://marketplace.visualstudio.com/items?itemName=DHost.dhost"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img
-                          src="https://img.shields.io/vscode-marketplace/d/DHost.dhost.svg?style=flat-square&color=green&label=installs"
-                          width="80"
-                          alt="vs code marketplace"
-                        />
-                      </a>
-                    </span>
                   </div>
                 </div>
               </div>
@@ -325,19 +295,6 @@ function LandingPage() {
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
                     </a>
-                    <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                      <a
-                        href="https://marketplace.visualstudio.com/items?itemName=1clickNFT.1clicknft"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img
-                          src="https://img.shields.io/vscode-marketplace/d/1clickNFT.1clicknft.svg?style=flat-square&color=green&label=installs"
-                          width="80"
-                          alt="vs code marketplace"
-                        />
-                      </a>
-                    </span>
                   </div>
                 </div>
               </div>
