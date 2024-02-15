@@ -46,8 +46,8 @@ function LandingPage() {
               <br />
               One of the most significant benefits of decentralization is the
               transformation towards seamless data accessibility from anywhere,
-              primarily driven by the widespread use of smartphones and cloud
-              applications.{" "}
+              primarily driven by the advancements in peer-to-peer technologies
+              and decentralized storage solutions.{" "}
               <b>
                 Our vision is to ensure that users can access information as
                 extensively as possible from anywhere in the world.
